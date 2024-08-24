@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       {targetDateParam ? (
-        <Countdown toDate={new Date(targetDateParam)} title={title} />
+        <Countdown toDate={new Date(targetDateParam)} title={title ?? ""} />
       ) : (
         <CountdownCreation />
       )}
