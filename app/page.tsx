@@ -15,7 +15,7 @@ export default function Home() {
   const title = searchParams.get("title");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
+    <main className="flex min-h-screen flex-col items-center justify-start sm:justify-center p-4">
       {targetDateParam ? (
         <Countdown toDate={new Date(targetDateParam)} title={title ?? ""} />
       ) : (
@@ -103,19 +103,24 @@ function CountdownCreation() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+    <div className="flex flex-col items-center justify-center bg-background h-full">
       <h1 className="text-xl pb-8">Create new countdown ⏲️</h1>
-      <div className="grid grid-cols-[60px_auto] gap-4 pb-6 items-center">
-        <Label htmlFor="title" className="justify-self-end">
+      <div className="grid grid-cols-1 sm:grid-cols-[auto_auto] gap-4 pb-6 items-center">
+        <Label
+          htmlFor="title"
+          className="justify-self-start sm:justify-self-end"
+        >
           Title
         </Label>
         <Input
           id="title"
-          className="w-[280px]"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <Label htmlFor="time" className="justify-self-end">
+        <Label
+          htmlFor="time"
+          className="sm:justify-self-start md:justify-self-end"
+        >
           Target
         </Label>
         <DateTimePicker date={date} setDate={setDate} id="time" />
