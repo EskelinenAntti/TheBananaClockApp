@@ -2,7 +2,7 @@
 
 A web app for creating countdowns without going bananas!
 
-Available at [bananaclock.vercel.app](bananaclock.vercel.app)
+Available at https://bananaclock.vercel.app
 
 ## Highlights
 
