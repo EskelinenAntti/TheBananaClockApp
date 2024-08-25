@@ -15,7 +15,7 @@ export default function Home() {
   const title = searchParams.get("title");
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start sm:justify-center p-4">
+    <main className="flex flex-col h-dvh items-center p-4">
       {targetDateParam ? (
         <Countdown toDate={new Date(targetDateParam)} title={title ?? ""} />
       ) : (
@@ -103,7 +103,7 @@ function CountdownCreation() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-background h-full">
+    <div className="flex flex-col items-center bg-background h-dvh justify-start sm:justify-center ">
       <h1 className="text-xl pb-8">Create new countdown ⏲️</h1>
       <div className="grid grid-cols-1 sm:grid-cols-[auto_auto] gap-4 pb-6 items-center">
         <Label
