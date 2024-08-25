@@ -101,6 +101,7 @@ function CountdownCreation() {
 
     params.set(TITLE_SEARCH_PARAM, title);
     params.set(TO_DATE_SEARCH_PARAM, date.toISOString());
+    // Use shallow routing to update the query parameters without triggering page load
     window.history.pushState(null, "", `?${params.toString()}`);
   };
 
