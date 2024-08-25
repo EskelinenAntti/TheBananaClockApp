@@ -104,7 +104,7 @@ function CountdownCreation() {
 
   return (
     <div className="flex flex-col items-center bg-background h-dvh justify-start sm:justify-center ">
-      <h1 className="text-xl pb-8">
+      <h1 className="text-xl pb-8 text-center">
         Create your own countdown without going bananas.
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-[auto_auto] gap-4 pb-6 items-center">
