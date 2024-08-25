@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { DateTimePicker } from "@/components/ui/date-time-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 import { useToast } from "@/components/ui/use-toast";
 import { addMonths, formatDuration, intervalToDuration } from "date-fns";
 import { CheckIcon, CopyIcon } from "lucide-react";
@@ -18,7 +19,8 @@ export default function Home() {
   const title = searchParams.get(TITLE_SEARCH_PARAM);
 
   return (
-    <main className="flex flex-col h-dvh items-center p-4">
+    <main className="flex flex-col h-dvh items-center p-4 gap-8">
+      <ModeToggle className="self-end" />
       {targetDateParam ? (
         <Countdown toDate={new Date(targetDateParam)} title={title ?? ""} />
       ) : (

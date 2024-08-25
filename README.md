@@ -11,3 +11,4 @@ Available at https://bananaclock.vercel.app
   - State is stored in query parameters
   - Use shallow routing to update url parameters without triggering page load
 - Responsive
+- Dark/Light mode
