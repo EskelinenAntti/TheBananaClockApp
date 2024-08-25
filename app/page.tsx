@@ -9,10 +9,13 @@ import { CheckIcon, CopyIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+const TO_DATE_SEARCH_PARAM = "toDate";
+const TITLE_SEARCH_PARAM = "title";
+
 export default function Home() {
   const searchParams = useSearchParams();
-  const targetDateParam = searchParams.get("toDate");
-  const title = searchParams.get("title");
+  const targetDateParam = searchParams.get(TO_DATE_SEARCH_PARAM);
+  const title = searchParams.get(TITLE_SEARCH_PARAM);
 
   return (
     <main className="flex flex-col h-dvh items-center p-4">
@@ -49,10 +52,9 @@ function Countdown({ toDate, title }: { toDate: Date; title: string }) {
     navigator.clipboard.writeText(window.location.toString());
   };
 
-  const targetDate = toDate;
   let timeUntil = intervalToDuration({
     start: new Date(currentMillis),
-    end: targetDate,
+    end: toDate,
   });
 
   return (
@@ -97,13 +99,13 @@ function CountdownCreation() {
   const handleCreateCountdown = () => {
     const params = new URLSearchParams();
 
-    params.set("title", title);
-    params.set("toDate", date.toISOString());
+    params.set(TITLE_SEARCH_PARAM, title);
+    params.set(TO_DATE_SEARCH_PARAM, date.toISOString());
     window.history.pushState(null, "", `?${params.toString()}`);
   };
 
   return (
-    <div className="flex flex-col items-center bg-background h-dvh justify-start sm:justify-center ">
+    <div className="flex flex-col items-center bg-background h-dvh justify-start sm:justify-center">
       <h1 className="text-xl pb-8 text-center">
         Create your own countdown without going bananas.
       </h1>
@@ -121,7 +123,7 @@ function CountdownCreation() {
         />
         <Label
           htmlFor="time"
-          className="sm:justify-self-start md:justify-self-end"
+          className="justify-self-start sm:justify-self-end"
         >
           Target
         </Label>
