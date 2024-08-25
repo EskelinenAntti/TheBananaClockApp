@@ -21,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      {/* ThemeProvider documentation recommends suppressing hydration 
+          warnings for the html-tag, as ThemeProvider
+          appends the style and class attributes to it. */}
       <body
         className={cn(
           "h-dvh w-full m-0 font-sans antialiased",

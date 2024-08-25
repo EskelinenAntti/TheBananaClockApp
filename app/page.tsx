@@ -63,7 +63,7 @@ function Countdown({ toDate, title }: { toDate: Date; title: string }) {
     <div className="flex flex-col justify-center items-center flex-grow">
       <div className="flex flex-col text-center justify-center gap-4 flex-grow">
         <h1 className="text-2xl">{title}</h1>
-        <p>
+        <p suppressHydrationWarning>
           {formatDuration(timeUntil, {
             delimiter: ", ",
           })}

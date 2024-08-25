@@ -12,7 +12,9 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogFooter,
+  DialogTitle,
   DialogTrigger,
 } from "./dialog";
 import { CheckIcon } from "@radix-ui/react-icons";
@@ -42,6 +44,8 @@ export function DateTimePicker({ date, setDate, id }: DateTimePickerProps) {
 
   return (
     <Dialog>
+      <DialogTitle className="sr-only">Target date</DialogTitle>
+
       <DialogTrigger asChild>
         <Button
           id={id}
@@ -50,12 +54,18 @@ export function DateTimePicker({ date, setDate, id }: DateTimePickerProps) {
             "w-[280px] justify-start text-left font-normal",
             !date && "text-muted-foreground"
           )}
+          // Avoid hydration warnings when current time is being presented here.
+          suppressHydrationWarning
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
           {date ? format(date, "PPP HH:mm:ss") : <span>Pick a date</span>}
         </Button>
       </DialogTrigger>
       <DialogContent className="w-auto p-0" showCloseButton={false}>
+        <DialogDescription className="sr-only">
+          Select target date
+        </DialogDescription>
+
         <Calendar
           mode="single"
           selected={date}
