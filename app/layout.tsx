@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { Inter as FontSans } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
+import { ShareFooter } from "@/components/share-footer";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { CreateMenu } from "@/components/create-menu";
 
 export const metadata: Metadata = {
   title: "Banana Bar",
@@ -37,7 +40,16 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Suspense>{children}</Suspense>
+          <Suspense>
+            <main className="flex flex-col h-dvh items-center p-4 gap-8">
+              <div className="flex flex-row justify-between w-full">
+                <CreateMenu />
+                <ModeToggle />
+              </div>
+
+              {children}
+            </main>
+          </Suspense>
           <Toaster />
         </ThemeProvider>
       </body>
