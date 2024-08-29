@@ -7,8 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "The Banana Clock",
-  description: "Create your own countdown without going bananas.",
+  title: "Banana Bar",
+  description: "Create your own progress bar without going bananas.",
 };
 const fontSans = FontSans({
   subsets: ["latin"],
