@@ -120,7 +120,7 @@ function CountdownCreation() {
         </Label>
         <DateTimePicker date={toDate} setDate={setToDate} id="toDate" />
       </div>
-      <Button onClick={handleCreateCountdown}>Create countdown</Button>
+      <Button onClick={handleCreateCountdown}>Create progress bar</Button>
     </div>
   );
 }
