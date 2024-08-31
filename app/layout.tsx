@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { CreateMenu } from "@/components/create-menu";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "The Banana Clock App",
@@ -48,6 +49,7 @@ export default function RootLayout({
               </div>
 
               {children}
+              <Analytics />
             </main>
           </Suspense>
           <Toaster />
