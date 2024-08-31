@@ -5,13 +5,13 @@ import { cn } from "@/lib/utils";
 import { Inter as FontSans } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { Suspense } from "react";
-import { ShareFooter } from "@/components/share-footer";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { CreateMenu } from "@/components/create-menu";
 
 export const metadata: Metadata = {
-  title: "Banana Bar",
-  description: "Create your own progress bar without going bananas.",
+  title: "The Banana Clock App",
+  description:
+    "Create your own countdowns and progress bars without going bananas.",
 };
 const fontSans = FontSans({
   subsets: ["latin"],

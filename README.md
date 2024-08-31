@@ -1,6 +1,6 @@
-# The Banana Clock
+# The Banana Clock App
 
-A web app for creating countdowns without going bananas!
+A web app for creating countdowns and progress bar timers without going bananas!
 
 Available at https://bananaclock.vercel.app
 
