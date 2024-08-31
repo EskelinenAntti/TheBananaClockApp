@@ -8,11 +8,9 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export function CreateMenu() {
-  const handleCreateNewCountdownClicked = () => {
-    window.history.pushState(null, "", "/");
-  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,11 +19,13 @@ export function CreateMenu() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mx-4">
-        <DropdownMenuItem onClick={handleCreateNewCountdownClicked}>
-          Progress bar
-        </DropdownMenuItem>
+        <Link href="/bar">
+          <DropdownMenuItem>Progress bar</DropdownMenuItem>
+        </Link>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Countdown</DropdownMenuItem>
+        <Link href="/countdown">
+          <DropdownMenuItem>Countdown</DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );
